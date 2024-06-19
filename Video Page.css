@@ -1,0 +1,122 @@
+html,
+body {
+    height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.background-image {
+    background-image: linear-gradient(0deg, rgba(33, 30, 30, 1) 26%, rgba(0, 0, 0, 0.53125) 47%, rgba(0, 0, 0, 0) 99%), url('vidtitle.jpg');
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.background-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: var(--thumbnail-url, none);
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    z-index: -1;
+}
+
+.title,
+.text {
+    position: relative;
+    z-index: 2;
+}
+
+.background-image.hovered::before {
+    opacity: 1;
+}
+
+.title {
+    overflow: hidden;
+    font-size: 4vw;
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 120px;
+    padding-top: 120px;
+    width: 100%;
+}
+
+.text {
+    overflow: hidden;
+    font-size: 2vw;
+    color: white;
+    text-align: left;
+    padding-top: 20px;
+    padding-left: 130px;
+    width: 100%;
+}
+
+.data-thumbnail {
+    transition-duration: 2s;
+}
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 5.5vw;
+    }
+}
+
+.wrapper {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    padding-top: 100px;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    /* padding: 10px; */
+    gap: 100px;
+}
+
+.item {
+    flex-shrink: 0;
+    position: relative;
+    z-index: 100;
+    /* width: 30%; */
+    min-width: 300px;
+    /* line-height: 140px;  */
+    padding-bottom: 100px;
+    text-align: center;
+    /* border: 3px solid transparent; */
+    background-clip: padding-box;
+}
+
+@media (max-width: 600px) {
+    .item {
+        min-width: 250px;
+        padding-bottom: 5px;
+    }
+    .wrapper {
+        /* overflow-x: hidden;
+        overflow-y: auto; */
+        width: 100%;
+        height: 500px;
+        flex-direction: column;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .text{
+        margin-bottom: 50px;
+    }
+}
+
+.item:hover {
+    animation: border-animation 3s infinite;
+}

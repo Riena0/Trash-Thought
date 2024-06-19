@@ -1,0 +1,304 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2087A2;
+    transition: transform 1s ease-in-out;
+}
+
+.b1{
+    background-color: #B09860;
+}
+
+.container {
+    position: absolute;
+    width: 1440px;
+    height: 1024px;
+    background-image: url("multimedia assets/background.png");
+    background-size: cover;
+    background-position: center;
+    overflow: none;
+}
+
+  
+.interactable {
+    position: absolute;
+    cursor: pointer;
+}
+
+.trash1{
+    position: absolute;
+    width: 390px;
+    top: 406px;
+    left: 650px;
+} 
+.trash1:hover{
+    content: url("multimedia assets/trash hover 1.png");
+}
+.trash2{
+    position: absolute;
+    width: 120px;
+    top: 497px;
+    left: 260px;
+} 
+.trash2:hover{
+    content: url("multimedia assets/sea trash hover.png");
+}
+.hermit{
+    position: absolute;
+    width: 120px;
+    top: 820px;
+    left: 250px;
+}
+
+.hermit:hover{
+    content: url("multimedia assets/hermit crab pop.png");
+}
+
+.ship{
+    position: absolute;
+    width: 85px;
+    top: 305px;
+    left: 1040px;
+    transform: rotate(270deg);
+}
+
+.ship:hover{
+    content: url("multimedia assets/ship hover.png");
+}
+
+.popup{
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.popup.open{
+    opacity: 1;
+    z-index: 999;
+    pointer-events: none;
+}
+
+.containerSeaFloor{ 
+    position: absolute;
+    width: 1440px;
+    height: 1024px;
+    background-image: url("multimedia assets/seafloor background 1.jpg");
+    background-size: cover;
+    background-position: center;
+    overflow: scroll;
+    /* z-index: 1; */
+    animation: transitionIn 0.5s;
+}
+
+
+.trashfly1{
+    position: absolute;
+    width: 150px;
+    top: 570px;
+    left: 655px;  
+}
+
+.trashfly2{
+    position: absolute;
+    width: 160px;
+    top: 210px;
+    left: 930px;  
+}
+
+.trashfly3{
+    position: absolute;
+    width: 170px;
+    top: 250px;
+    left: 550px;  
+}
+
+.trashfly4{
+    position: absolute;
+    width: 170px;
+    top: 300px;
+    left: 330px;  
+}
+
+.tape{
+    position: absolute;
+    width: 400px;
+    right: 1050px;
+    top: 500px;
+}
+
+.diver{
+    position: absolute;
+    width: 500px;
+    bottom: 0px;
+    right:0;
+}
+
+.hook{
+    position: relative;
+    width: 300px;
+    top: 30px;
+    left: 20px;
+}
+
+.tape:hover{
+    content: url("multimedia assets/tape hover.png");
+}
+
+.diver:hover{
+    content: url("multimedia assets/diver hover.png");
+}
+
+.hook:hover{
+    content: url("multimedia assets/fishing hook hover.png")
+}
+
+.trashfly1:hover{
+    content: url("multimedia assets/trash fly 1 hover.png");
+}
+
+.trashfly2:hover{
+    content: url("multimedia assets/trash fly 2 hover.png");
+}
+
+.trashfly3:hover{
+    content: url("multimedia assets/trash fly 3 hover.png");
+}
+
+.trashfly4:hover{
+    content: url("multimedia assets/trash fly 4 hover.png");
+}
+
+.article{
+    display: inline-block;
+    position: fixed;
+    overflow: scroll;
+    opacity: 0;
+    transform: scale(0.98);
+}
+
+.article.open{
+    pointer-events:stroke;
+    opacity: 1;
+    z-index: 999;
+}
+
+section{
+    position: relative;
+    width: 100%;
+    height: 1024px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    z-index: 1;
+}
+
+section span{
+    overflow: hidden;
+    position: absolute;
+    bottom: -50px;
+    background: transparent;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: inset 0 0 10px rgba(166, 214, 250, 0.5);
+    animation: animate 3s linear infinite;
+}
+
+section span:before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: scale(0.25) translate(-70%, -70%);
+    background: radial-gradient(#dceef5,transparent);
+    border-radius: 50%;
+}
+
+@keyframes animate
+{
+    0%
+    {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    99%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-1200%);
+        opacity: 0;
+    }
+}
+
+.float{
+    animation: floatAnimate 3s ease-out infinite;
+}
+
+.float1{
+    animation: floatAnimate1 3s ease-out infinite;
+}
+.float2{
+    animation: floatAnimate2 3s ease-out infinite;
+}
+.float3{
+    animation: floatAnimate3 3s ease-out infinite;
+}
+.float4{
+    animation: floatAnimate4 3s ease-out infinite;
+}
+
+@keyframes floatAnimate{
+    70%{
+        transform: translateY(30px);
+    }
+}
+@keyframes floatAnimate1{
+    35%{
+        transform: translateY(40px);
+    }
+}
+@keyframes floatAnimate2{
+    55%{
+        transform: translateY(70px);
+    }
+}
+@keyframes floatAnimate3{
+    25%{
+        transform: translateY(50px);
+    }
+}
+@keyframes floatAnimate4{
+    35%{
+        transform: translateY(20px);
+    }
+}
+
+@keyframes transitionIn{
+    from{
+        opacity: 0;
+        transform: translateY(150%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}

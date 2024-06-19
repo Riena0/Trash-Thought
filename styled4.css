@@ -1,0 +1,39 @@
+body{
+    background-image: url("/multimedia assets/Donation page 2.jpg");
+    background-size: cover;
+}
+
+div{
+    text-align: center;
+    align-items: center;
+    margin-top: 13%;
+}
+
+div h1{
+    text-align: center;
+    align-items: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: lighter;
+    font-size: 5vw;
+}
+
+button{
+    background-color: #2CB7C6;
+    padding: 20px 50px;
+    border-radius: 10px;
+    transition: 0.3s;
+    border: none;
+}
+
+button a{
+    color: black;
+    text-decoration: none;
+    font-size: 1.5vw;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+button:hover{
+    background-color: #2E8993;
+    transition: 0.3s;
+    cursor: pointer;
+}
